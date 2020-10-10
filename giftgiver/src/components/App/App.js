@@ -10,10 +10,10 @@ class App extends Component {
 	}
 
 	addGift = () => {
-		let { gifts } = this.state
+		const { gifts } = this.state
 		const ids = this.state.gifts.map(gift => gift.id)
-		const maxID = ids.lenght > 0 ? Math.max(...ids) : 0
-		gifts.push({ id: maxID + 1})
+		const maxID = ids.length > 0 ? Math.max(...ids) : 0
+		gifts.push({ id: maxID+1 })
 		this.setState({ gifts })
 	}
 
@@ -21,6 +21,11 @@ class App extends Component {
 		return (
 			<div>
 				<h1>Gift Giver</h1>
+				<div className='gift-list'>
+					{
+						this.state.gifts.map(gift => <div key={gift.id}>{gift.id}</div>)
+					}
+				</div>
 				<Button className='btn-add' onClick={this.addGift}>Add Gift</Button>
 			</div>
 		)

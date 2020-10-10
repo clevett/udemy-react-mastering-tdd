@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'react-bootstrap'
+import Gift from "../Gift/Gift"
 
 class App extends Component {
 	constructor() {
@@ -23,7 +24,7 @@ class App extends Component {
 				<h1>Gift Giver</h1>
 				<div className='gift-list'>
 					{
-						this.state.gifts.map(gift => <div key={gift.id}>{gift.id}</div>)
+						this.state.gifts.map(gift => <Gift key={gift.id} />)
 					}
 				</div>
 				<Button className='btn-add' onClick={this.addGift}>Add Gift</Button>

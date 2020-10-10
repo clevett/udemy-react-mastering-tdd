@@ -1,9 +1,32 @@
 import React, { Component } from 'react'
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap'
 
 class Gift extends Component {
+	constructor() {
+		super()
+		this.state = { person: '', present: ''}
+	}
+
 	render() {
 		return (
-			<div></div>
+			<div>
+				<Form>
+					<FormGroup>
+						<Form.Label>Person</Form.Label>
+						<FormControl 
+							className='input-person' 
+							onChange={event => this.setState({ person: event.target.value })} 
+						/>
+					</FormGroup>
+					<FormGroup>
+						<Form.Label>Present</Form.Label>
+						<FormControl 
+							className='input-present' 
+							onChange={event => this.setState({ present: event.target.value })} 
+						/>
+					</FormGroup>
+				</Form>
+			</div>
 		)
 	}
 }

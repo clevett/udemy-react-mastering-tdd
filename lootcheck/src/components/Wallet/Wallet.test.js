@@ -42,7 +42,6 @@ describe('Wallet', () => {
 			})
 		})
 
-
 		describe('and the user wants to make a withdraw', () => {
 			beforeEach(() => wallet.find('.btn-withdraw').simulate('click'))
 

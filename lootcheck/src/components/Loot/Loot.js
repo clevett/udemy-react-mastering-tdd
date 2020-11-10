@@ -11,7 +11,7 @@ export class Loot extends React.Component {
 		const { bitcoin } = this.props
 
 		//Guard clause
-		if (Object.keys(bitcoin).lenght === 0) return ''
+		if (bitcoin.bpi === undefined) return ''
 
 		return this.props.balance / parseInt(bitcoin.bpi.USD.rate.replace(',', ''), 10)
 	}
